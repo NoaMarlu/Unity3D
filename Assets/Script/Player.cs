@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
          transform.Translate(movement);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Block"))
         {
