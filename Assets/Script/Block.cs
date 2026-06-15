@@ -57,14 +57,12 @@ public class Block : MonoBehaviour
 
         //分裂オブジェクト1
         instance1=Instantiate(block,pos1,transform.rotation);
-
         if(lastSplit)instance1.GetComponent<Block>().setDirection(1);//左右だったら
         else instance1.GetComponent<Block>().setDirection(3);
         //////////////////
         //分裂オブジェクト2
         instance2 = Instantiate(block,pos2,transform.rotation);
-
-        if(lastSplit)instance2.GetComponent<Block>().setDirection(2);//左右だったら
+        if (lastSplit)instance2.GetComponent<Block>().setDirection(2);//左右だったら
         else instance2.GetComponent<Block>().setDirection(4);
         ///////////////////
 
@@ -84,6 +82,8 @@ public class Block : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Block"))
         {
+
+
             Debug.Log("ブロック同士が衝突しました");
             //1で左、2で右、3で上、4で下
             switch(col.GetComponent<Block>().lastDirection)
@@ -108,6 +108,10 @@ public class Block : MonoBehaviour
                     Debug.Log("lastDirectionが定義されていません！");
                     break;
             }
+        }
+        if (col.gameObject.CompareTag("BlockDelete"))
+        {
+            Destroy(gameObject);
         }
     }
         
