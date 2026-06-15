@@ -9,6 +9,8 @@ public class Block : MonoBehaviour
     public int lastDirection;//1で左、2で右、3で上、4で下
     public bool lastSplit;//trueで左右、falseで上下
 
+    public bool thisGoal = false;
+
     void Start()
     {
         Init();
@@ -19,6 +21,7 @@ public class Block : MonoBehaviour
 
     public void Open()
     {
+        if (thisGoal) return;
 
         int posX = 0;
         int posZ = 0;
