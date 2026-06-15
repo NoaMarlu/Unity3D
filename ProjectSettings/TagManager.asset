@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Block
   - BlockDelete
+  - Goal
   layers:
   - Default
   - TransparentFX
